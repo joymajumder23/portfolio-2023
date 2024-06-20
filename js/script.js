@@ -74,7 +74,7 @@ $(document).ready(function(){
     //CV download
     $('#download').click(function(e) {
       e.preventDefault();
-      window.location.href = '#contact';
+      window.location.href = '../images/Joy Majumder - Developer Resume.pdf';
     });
 
 
