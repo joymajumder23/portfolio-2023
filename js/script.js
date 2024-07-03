@@ -72,10 +72,15 @@ $(document).ready(function(){
     });
 
     //CV download
+    // $('#download').click(function(e) {
+    //   e.preventDefault();
+    //   window.location.href = 'https://drive.google.com/file/d/13sLU1SXG3G0NHstT1_Dz0UYW17xldIfN/view?usp=sharing';
+    // });
     $('#download').click(function(e) {
       e.preventDefault();
-      window.location.href = '../images/Joy Majumder - Developer Resume.pdf';
-    });
+      window.location.href = $(this).attr('href');
+  });
+  
 
 
     // get message
