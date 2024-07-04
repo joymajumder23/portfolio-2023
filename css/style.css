@@ -6,7 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    cursor: url("../images/cursor/cursor.svg") 20 15, auto;
+    /* cursor: url("../images/cursor/cursor.svg") 20 15, auto; */
 }
 html{
     scroll-behavior: smooth;
@@ -132,7 +132,7 @@ section .title::after{
 .menu-btn{
     color: #fff;
     font-size: 23px;
-    cursor: url("../images/cursor/tap.svg") 20 15, auto;
+    /* cursor: url("../images/cursor/tap.svg") 20 15, auto; */
     display: none;
 }
 .scroll-up-btn{
@@ -452,6 +452,10 @@ section .title::after{
 .owl-dot.active,
 .owl-dot:hover{
     background: crimson!important;
+}
+
+.teams .card a:hover{
+    color: black;
 }
 
 /* contact section styling */
