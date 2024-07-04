@@ -5,6 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joy Majumder</title>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "xL9exF2VTtvqE6FWe",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('contact_service', 'contact_form', this)
+                    .then(() => {
+                        console.log('SUCCESS!');
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+
     <link rel="icon" href="images/Logo.png" type="image/gif/png/jpg">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -420,27 +445,39 @@
                 </div>
                 <div class="column right" data-aos="slide-up">
                     <div class="text">Message me</div>
-                    <form id="my-form" action="https://formspree.io/f/xbjbbooa" method="POST">
+                    <form id="contact-form" action="">
                         <div class="fields">
                             <div class="field name">
-                                <input type="text" placeholder="Name" name="name" required>
+                                <input type="text" placeholder="Name" name="user_name" required>
                             </div>
                             <div class="field email">
-                                <input type="email" placeholder="Email" name="email" required>
+                                <input type="email" placeholder="Email" name="user_email" required>
                             </div>
                         </div>
-                        <div class="field">
+                        <!-- <div class="field">
                             <input type="text" placeholder="Subject" name="subject" Autocomplete="off" required>
-                        </div>
+                        </div> -->
                         <div class="field textarea">
                             <textarea messagetype="text" cols="30" rows="10" placeholder="Message.." name="message"
                                 Autocomplete="off" required></textarea>
                         </div>
                         <div class="button-area" data-aos="flip-up">
-                            <button id="my-form-button">Send message</button>
+                            <!-- <button id="my-form-button">Send message</button> -->
+                            <input type="submit" value="Send">
                             <p id="my-form-status"></p>
                         </div>
                     </form>
+                    <!-- <form id="contact-form">
+                        
+                        <input type="hidden" name="contact_number" value="697483">
+                        <label>Name</label>
+                        <input type="text" name="user_name">
+                        <label>Email</label>
+                        <input type="email" name="user_email">
+                        <label>Message</label>
+                        <textarea name="message"></textarea>
+                        <input type="submit" value="Send">
+                    </form> -->
                 </div>
             </div>
         </div>
